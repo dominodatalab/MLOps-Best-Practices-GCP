@@ -564,7 +564,8 @@ prediction <- function(inpFeat1,inpFeat2,inpFeat3,inpFeat4,inpFeat5) {
                                chlorides = inpFeat3,
                                is_red = inpFeat4,
                                alcohol = inpFeat5)), auto_unbox = TRUE),
-    content_type("application/json")
+    content_type("application/json"),
+    httr::config(ssl_verifypeer = 0L)
   )
   
   str(content(response))
